@@ -35,25 +35,21 @@ async function startServer() {
       console.log(`Recipient: ${targetEmail}`);
       console.log("-----------------------------------------");
 
-      // Configure SMTP Transporter (Using Port 465 SSL which is supported on Cloud Hosts like Render)
+      // Configure SMTP Transporter
       const smtpUser = process.env.SMTP_USER || "patilmayur7602@gmail.com";
       const smtpPass = (process.env.SMTP_PASS || "tiquwvozqayyfjiq").replace(/\s+/g, "");
 
       if (smtpUser && smtpPass) {
+        // Use standard nodemailer Gmail service or fallback host
         const transporter = nodemailer.createTransport({
-          host: "smtp.gmail.com",
-          port: 465,
-          secure: true, // Direct SSL/TLS - Works reliably on Render / Cloud hosting
+          service: "gmail",
           auth: {
             user: smtpUser,
             pass: smtpPass,
           },
           tls: {
             rejectUnauthorized: false
-          },
-          connectionTimeout: 15000,
-          greetingTimeout: 15000,
-          socketTimeout: 15000,
+          }
         });
 
         const mailOptions = {
@@ -77,24 +73,30 @@ async function startServer() {
           `,
         };
 
-        // Try sending email with timeout guard
+        // Await email dispatch directly without short timeout cancellation
         try {
-          await Promise.race([
-            transporter.sendMail(mailOptions),
-            new Promise((_, reject) => setTimeout(() => reject(new Error("SMTP timeout after 8 seconds")), 8000))
-          ]);
-          console.log(`Successfully sent email notification to ${targetEmail}`);
-        } catch (mailErr) {
-          console.error("Warning: SMTP email sending encountered an error/timeout:", mailErr);
+          const info = await transporter.sendMail(mailOptions);
+          console.log(`Successfully sent email notification to ${targetEmail}. Message ID: ${info.messageId}`);
+          return res.status(200).json({ 
+            success: true, 
+            message: `Callback request sent successfully to ${targetEmail}`,
+            messageId: info.messageId
+          });
+        } catch (mailErr: any) {
+          console.error("SMTP error sending email:", mailErr);
+          return res.status(500).json({ 
+            success: false, 
+            message: "Failed to send email via SMTP", 
+            error: mailErr?.message || String(mailErr) 
+          });
         }
       } else {
         console.warn(`[SMTP Warning] SMTP_USER or SMTP_PASS environment variables are not set.`);
+        return res.status(400).json({
+          success: false,
+          message: "SMTP configuration missing (SMTP_USER / SMTP_PASS environment variables)"
+        });
       }
-
-      return res.status(200).json({ 
-        success: true, 
-        message: `Callback request processed for ${targetEmail}` 
-      });
     } catch (error) {
       console.error("Error processing callback enquiry:", error);
       return res.status(500).json({ success: false, message: "Server error processing enquiry" });
