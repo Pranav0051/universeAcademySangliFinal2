@@ -73,7 +73,6 @@ export default function App() {
         <Testimonials />
         <Gallery />
         <Batches onOpenEnquiry={(title) => handleOpenEnquiry(title)} />
-        <Blog />
         <FAQ />
         <Contact prefilledCourse={selectedCourse} />
       </main>
