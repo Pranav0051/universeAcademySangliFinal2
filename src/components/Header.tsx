@@ -98,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
           {/* Right Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href="tel:+919876543210"
+              href="tel:+919665492713"
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold border transition-colors ${
                 isScrolled 
                   ? 'text-[#0F3A5A] border-slate-200 hover:bg-slate-50' 
@@ -148,7 +148,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
             ))}
             <div className="pt-2 flex flex-col gap-2">
               <a
-                href="tel:+919876543210"
+                href="tel:+919665492713"
                 className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold border text-[#0F3A5A] border-slate-200"
               >
                 <Phone className="w-3.5 h-3.5" />

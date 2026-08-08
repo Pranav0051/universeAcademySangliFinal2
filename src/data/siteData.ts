@@ -15,7 +15,7 @@ export const COLORS = {
 export const COURSES: Course[] = [
   {
     title: 'Full Stack Development',
-    duration: '6 Months',
+    duration: '3 Months',
     mode: 'Online/Offline',
     icon: '💻',
     careers: 'Web Dev, Backend Dev, SDE',
@@ -39,7 +39,7 @@ export const COURSES: Course[] = [
   },
   {
     title: 'Python Programming',
-    duration: '4 Months',
+    duration: '2 Months',
     mode: 'Online/Offline',
     icon: '🐍',
     careers: 'Data Scientist, ML Engineer',
@@ -50,20 +50,8 @@ export const COURSES: Course[] = [
     popular: true
   },
   {
-    title: 'AI & Machine Learning',
-    duration: '5 Months',
-    mode: 'Online/Offline',
-    icon: '🤖',
-    careers: 'AI Engineer, Research Analyst',
-    color: '#FAF5FF',
-    accent: '#A855F7',
-    img: 'photo-1677442135703-1787eea5ce01',
-    category: 'Software',
-    popular: true
-  },
-  {
     title: 'Cyber Security',
-    duration: '4 Months',
+    duration: '3 Months',
     mode: 'Online/Offline',
     icon: '🔐',
     careers: 'Security Analyst, Ethical Hacker',
@@ -135,7 +123,7 @@ export const COURSES: Course[] = [
   },
   {
     title: 'Java Programming',
-    duration: '4 Months',
+    duration: '2 Months',
     mode: 'Online/Offline',
     icon: '☕',
     careers: 'Java Developer, Backend Engineer',
@@ -146,7 +134,7 @@ export const COURSES: Course[] = [
     popular: false
   },
   {
-    title: 'Networking & Hardware',
+    title: 'C & C++',
     duration: '2 Months',
     mode: 'Online/Offline',
     icon: '🔌',
@@ -154,7 +142,7 @@ export const COURSES: Course[] = [
     color: '#EFF6FF',
     accent: '#2563EB',
     img: 'photo-1558494949-ef010cbdcc31',
-    category: 'Cyber & Cloud',
+    category: 'Software',
     popular: false
   }
 ];

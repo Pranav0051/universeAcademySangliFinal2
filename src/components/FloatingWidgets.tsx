@@ -27,7 +27,7 @@ export const FloatingWidgets: React.FC<FloatingWidgetsProps> = ({ onOpenEnquiry 
       <div className="fixed bottom-24 right-5 z-40 flex flex-col gap-3">
         {/* Call Button */}
         <a
-          href="tel:+919876543210"
+          href="tel:+919665492713"
           className="w-12 h-12 rounded-full bg-[#1F5D8C] text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform"
           title="Call Us Directly"
         >
@@ -36,7 +36,7 @@ export const FloatingWidgets: React.FC<FloatingWidgetsProps> = ({ onOpenEnquiry 
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/919876543210"
+          href="https://wa.me/919665492713"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform"
