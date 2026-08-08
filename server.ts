@@ -9,6 +9,17 @@ async function startServer() {
 
   app.use(express.json());
 
+  // CORS Middleware for Render / external calls
+  app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    if (req.method === "OPTIONS") {
+      return res.sendStatus(200);
+    }
+    next();
+  });
+
   // Callback / Request Enquiry endpoint - dispatches email via SMTP
   app.post("/api/enquiry", async (req, res) => {
     try {
@@ -25,23 +36,23 @@ async function startServer() {
       console.log("-----------------------------------------");
 
       // Configure SMTP Transporter
-      const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
-      const smtpPort = parseInt(process.env.SMTP_PORT || "587");
       const smtpUser = process.env.SMTP_USER || "patilmayur7602@gmail.com";
       const smtpPass = (process.env.SMTP_PASS || "tiquwvozqayyfjiq").replace(/\s+/g, "");
 
       if (smtpUser && smtpPass) {
+        // Use standard nodemailer Gmail service or fallback host
         const transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: smtpPort,
-          secure: smtpPort === 465,
+          service: "gmail",
           auth: {
             user: smtpUser,
             pass: smtpPass,
           },
+          tls: {
+            rejectUnauthorized: false
+          }
         });
 
-        await transporter.sendMail({
+        const mailOptions = {
           from: `"Universe Academy Enquiry" <${smtpUser}>`,
           to: targetEmail,
           subject: `🎓 New Callback Request from ${name} - Universe Academy`,
@@ -60,19 +71,35 @@ async function startServer() {
               <p style="font-size: 12px; color: #5A6573; margin-bottom: 0;">Submitted on ${new Date().toLocaleString()}</p>
             </div>
           `,
-        });
-        console.log(`Successfully sent email notification to ${targetEmail}`);
-      } else {
-        console.warn(`[SMTP Warning] SMTP_USER or SMTP_PASS environment variables are not set. Set them in project environment variables to enable active email sending.`);
-      }
+        };
 
-      res.status(200).json({ 
-        success: true, 
-        message: `Callback request processed for ${targetEmail}` 
-      });
+        // Await email dispatch directly without short timeout cancellation
+        try {
+          const info = await transporter.sendMail(mailOptions);
+          console.log(`Successfully sent email notification to ${targetEmail}. Message ID: ${info.messageId}`);
+          return res.status(200).json({ 
+            success: true, 
+            message: `Callback request sent successfully to ${targetEmail}`,
+            messageId: info.messageId
+          });
+        } catch (mailErr: any) {
+          console.error("SMTP error sending email:", mailErr);
+          return res.status(500).json({ 
+            success: false, 
+            message: "Failed to send email via SMTP", 
+            error: mailErr?.message || String(mailErr) 
+          });
+        }
+      } else {
+        console.warn(`[SMTP Warning] SMTP_USER or SMTP_PASS environment variables are not set.`);
+        return res.status(400).json({
+          success: false,
+          message: "SMTP configuration missing (SMTP_USER / SMTP_PASS environment variables)"
+        });
+      }
     } catch (error) {
-      console.error("Error sending callback email:", error);
-      res.status(500).json({ success: false, message: "Failed to send email notification" });
+      console.error("Error processing callback enquiry:", error);
+      return res.status(500).json({ success: false, message: "Server error processing enquiry" });
     }
   });
 
