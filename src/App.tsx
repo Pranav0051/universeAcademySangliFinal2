@@ -69,7 +69,7 @@ export default function App() {
         <WhyChooseUs />
 <Placements onOpenEnquiry={() => handleOpenEnquiry()}>
   Journey
-</Placements>        <Faculty />
+</Placements>      
         <Testimonials />
         <Gallery />
         <Batches onOpenEnquiry={(title) => handleOpenEnquiry(title)} />

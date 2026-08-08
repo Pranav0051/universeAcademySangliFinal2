@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
     { name: 'Courses', href: '#courses' },
     { name: 'Why Us', href: '#why-us' },
     { name: 'Journey With Us', href: '#placements' },
-    { name: 'Faculty', href: '#faculty' },
+   // { name: 'Faculty', href: '#faculty' },
     { name: 'Batches', href: '#batches' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' }
