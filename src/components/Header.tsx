@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight, Menu, X, Sparkles, GraduationCap } from 'lucide-react';
 import { COLORS } from '../data/siteData';
+import universeLogo from '../images/UNIVERSE ACADEMY LOGO.png';
 
 interface HeaderProps {
   onOpenEnquiry: () => void;
@@ -59,12 +60,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group text-decoration-none">
-            <div 
-              className="w-10 h-10 rounded-xl flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105"
-              style={{ background: 'linear-gradient(135deg, #0F3A5A 0%, #1F5D8C 100%)' }}
-            >
-              <GraduationCap className="w-6 h-6 text-[#F6C343]" />
-            </div>
+           
+           
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-md overflow-hidden transition-transform duration-300 group-hover:scale-105">
+  <img
+    src={universeLogo}
+    alt="Universe Academy"
+    className="w-full h-full object-contain"
+  />
+</div>       
+           
             <div className="flex flex-col">
               <span className={`font-black text-xl md:text-2xl tracking-tight leading-tight transition-colors ${
                 isScrolled ? 'text-[#0F3A5A]' : 'text-white'
