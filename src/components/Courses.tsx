@@ -11,7 +11,7 @@ export const Courses: React.FC<CoursesProps> = ({ onOpenEnquiry }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const categories = ['All', 'Software', 'Digital', 'Cyber & Cloud', 'Design & CAD'];
+  const categories = ['All', 'Software', 'Digital', 'Cyber & Cloud', 'Design & CAD',"Mechanical CAD","Electrical CAD","Civil CAD","Interior Design","Project Managment"];
 
   const filteredCourses = COURSES.filter((course) => {
     const matchesCategory = selectedCategory === 'All' || course.category === selectedCategory;
