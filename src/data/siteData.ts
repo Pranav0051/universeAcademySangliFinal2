@@ -694,7 +694,7 @@ export const UPCOMING_BATCHES: Batch[] = [
     course: 'Full Stack Development',
     start: 'Sep 1, 2026',
     duration: '2-3 Months',
-    timing: 'Mon–Sun, 9am–8pm',
+    timing: 'Wed–Mon, 9am–8pm',
     seats: 8,
     color: '#3B82F6'
   },
@@ -702,7 +702,7 @@ export const UPCOMING_BATCHES: Batch[] = [
     course: 'Data Analytics',
     start: 'Sep 1, 2026',
     duration: '2-3 Months',
-    timing: 'Mon–Sun, 9am–8pm',
+    timing: 'Wed-Mon, 9am–8pm',
     seats: 5,
     color: '#F97316'
   },
@@ -710,7 +710,7 @@ export const UPCOMING_BATCHES: Batch[] = [
     course: 'Software Testing',
     start: 'Sep 1, 2026',
     duration: '2-3 Months',
-     timing: 'Mon–Sun, 9am–8pm',
+     timing: 'Wed-Mon, 9am–8pm',
     seats: 5,
     color: '#F97316'
   },
@@ -718,7 +718,7 @@ export const UPCOMING_BATCHES: Batch[] = [
     course: 'C & C++',
     start: 'Sep 1, 2026',
     duration: '2 Months',
-    timing: 'Mon–Sat, 4pm–7pm',
+    timing: 'Wed-Mon, 9am–8pm',
     seats: 3,
     color: '#F43F5E'
   },
@@ -726,7 +726,7 @@ export const UPCOMING_BATCHES: Batch[] = [
     course: 'JAVA',
     start: 'Sep 1, 2026',
     duration: '2 Months',
-    timing: 'Mon–Sat, 4pm–7pm',
+    timing: 'Wed-Mon, 9am–8pm',
     seats: 3,
     color: '#F43F5E'
   }

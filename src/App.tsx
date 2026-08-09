@@ -121,7 +121,6 @@ export default function App() {
                     <h3 className="text-base font-extrabold text-[#0F3A5A]">
                       Book Free Counselling Session
                     </h3>
-                    <p className="text-[11px] text-[#5A6573]">Get up to 30% scholarship on early enrollment</p>
                   </div>
                 </div>
 
