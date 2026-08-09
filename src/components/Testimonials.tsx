@@ -53,9 +53,6 @@ export const Testimonials: React.FC = () => {
                   <div className="text-xs font-bold text-[#1F5D8C]">
                     {item.course}
                   </div>
-                  <div className="text-[11px] text-emerald-600 font-extrabold flex items-center gap-1 mt-0.5">
-                    <Building2 className="w-3 h-3" /> Placed at {item.placed}
-                  </div>
                 </div>
               </div>
             </div>

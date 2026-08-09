@@ -652,34 +652,33 @@ export const FACULTY: FacultyMember[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
+    
   {
-    name: 'Ananya Gupta',
-    course: 'UI/UX Design',
+    name: 'Pratiksha Jadhav',
     rating: 5,
-    text: 'The design curriculum was incredibly comprehensive. I built a real portfolio during training and landed a job at a top product company. Universe Academy truly delivers what it promises.',
-    placed: 'Razorpay',
+    text: 'Best  training institute in Sangli! The practical project work on real industrial machine parts made me confident during technical interviews. Secured a Mechanical CAD Designer role with an attractive package.',
+    placed: 'Praj Industries',
+    initials: 'PJ',
+    color: '#1F5D8C'
+  },
+  {
+    name: 'Rohan Shinde',
+    rating: 5,
+    text: 'The  curriculum was incredibly comprehensive. I built a real portfolio during training and landed a job at a top product company. Highly recommend this institute!',
     initials: 'AG',
     color: '#EC4899'
   },
   {
-    name: 'Suresh Reddy',
-    course: 'Python & Data Analytics',
+    name: 'Rohan Salunkhe',
     rating: 5,
-    text: 'I had zero programming knowledge. After 4 months at Universe Academy, I cracked my first interview and now work as a Data Analyst. The trainers were patient and highly skilled.',
-    placed: 'Wipro',
+    text: 'I had zero programming knowledge. After 4 months of intensive lab work and mock interviews, I cracked my first interview as a Software Engineer. Trainers were patient and highly skilled.',
     initials: 'SR',
     color: '#3B82F6'
   },
-  {
-    name: 'Fatima Begum',
-    course: 'Digital Marketing',
-    rating: 5,
-    text: 'The live campaign projects set me apart from other candidates. I could show real results in my interview. Got placed within 3 weeks after completing the course!',
-    placed: 'Dentsu Webchutney',
-    initials: 'FB',
-    color: '#F59E0B'
-  }
+  
+ 
 ];
+
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   { id: 'photo-1522071820081-009f0129c71c', label: 'Students Learning', span: 'col-span-1 md:col-span-2' },
@@ -693,32 +692,40 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 export const UPCOMING_BATCHES: Batch[] = [
   {
     course: 'Full Stack Development',
-    start: 'Aug 15, 2026',
-    duration: '6 Months',
-    timing: 'Mon–Sat, 10am–1pm',
+    start: 'Sep 1, 2026',
+    duration: '2-3 Months',
+    timing: 'Mon–Sun, 9am–8pm',
     seats: 8,
     color: '#3B82F6'
   },
   {
-    course: 'Digital Marketing',
-    start: 'Aug 18, 2026',
-    duration: '3 Months',
-    timing: 'Mon–Sat, 2pm–5pm',
+    course: 'Data Analytics',
+    start: 'Sep 1, 2026',
+    duration: '2-3 Months',
+    timing: 'Mon–Sun, 9am–8pm',
     seats: 5,
     color: '#F97316'
   },
   {
-    course: 'Python & AI/ML',
-    start: 'Aug 20, 2026',
-    duration: '5 Months',
-    timing: 'Mon–Sat, 10am–1pm',
-    seats: 10,
-    color: '#A855F7'
+    course: 'Software Testing',
+    start: 'Sep 1, 2026',
+    duration: '2-3 Months',
+     timing: 'Mon–Sun, 9am–8pm',
+    seats: 5,
+    color: '#F97316'
   },
   {
-    course: 'Cyber Security',
-    start: 'Aug 22, 2026',
-    duration: '4 Months',
+    course: 'C & C++',
+    start: 'Sep 1, 2026',
+    duration: '2 Months',
+    timing: 'Mon–Sat, 4pm–7pm',
+    seats: 3,
+    color: '#F43F5E'
+  },
+  {
+    course: 'JAVA',
+    start: 'Sep 1, 2026',
+    duration: '2 Months',
     timing: 'Mon–Sat, 4pm–7pm',
     seats: 3,
     color: '#F43F5E'
