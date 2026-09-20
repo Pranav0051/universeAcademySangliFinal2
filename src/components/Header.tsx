@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
               }`}
             >
               <Phone className="w-3.5 h-3.5 text-[#F6C343]" />
-              <span>+91 98765 43210</span>
+              <span>+91 9665492713</span>
             </a>
             
             <button
@@ -157,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
                 className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold border text-[#0F3A5A] border-slate-200"
               >
                 <Phone className="w-3.5 h-3.5" />
-                <span>Call Us: +91 98765 43210</span>
+                <span>Call Us: +91 9665492713</span>
               </a>
               <button
                 onClick={() => {
