@@ -119,7 +119,7 @@ export const Contact: React.FC<ContactProps> = ({ prefilledCourse = '' }) => {
               {[
                 { name: 'WhatsApp', color: '#25D366', link: 'https://wa.me/919665492713' },
                 { name: 'Facebook', color: '#1877F2', link: '#' },
-                { name: 'Instagram', color: '#E1306C', link: '#' },
+                { name: 'Instagram', color: '#E1306C', link: 'https://www.instagram.com/it_universe_academy_sangli?stkn=MXV4d3dvY29taHcyZA==' },
                 { name: 'LinkedIn', color: '#0A66C2', link: '#' }
               ].map((s, idx) => (
                 <a
