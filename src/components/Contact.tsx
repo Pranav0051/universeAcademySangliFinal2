@@ -214,7 +214,7 @@ export const Contact: React.FC<ContactProps> = ({ prefilledCourse = '' }) => {
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. +91 98765 43210"
+                      placeholder="e.g. +91 9665492713"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl text-xs font-semibold border border-slate-200 focus:outline-none focus:border-[#0F3A5A] bg-slate-50/50"
